@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  font-family: "Saira", sans-serif !important;
+  overflow-x: hidden;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.custom-border {
+  border-image: linear-gradient(
+    to bottom right,
+    white 0%,
+    black 25%,
+    white 50%,
+    black 75%,
+    white 100%
+  );
+  border-bottom: 2px solid transparent;
+  border-top: 0;
+  border-left: 0;
+  border-image-slice: 1;
+}
+.socialIcon {
+  background: url("../public/assets/Group30.svg");
+  background-position: left;
+  background-size: auto;
+}
+.thirdSection {
+  background: url("../public/assets/3rdSecBf.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.weDo {
+  background: url("../public/assets/weDo.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.amerServices {
+  background: url("../public/assets/amerServicesbg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.confirmDetail {
+  background: url("../public/assets/confirmDetail.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.box {
+  border-right: 2px;
+  border-bottom: 2px;
+  border-left: 0;
+  border-style: solid;
+  /* 	border-image: linear-gradient(to bottom, #ccc, #555 66%, #181818) 1 100%; */
+  border-image: linear-gradient(to bottom, #181818, #eee, #181818) 1 100%;
+}
+
+.box:last-child {
+  border-right: 0;
+}
+
+.card1 {
+  background: linear-gradient(90deg, #ff512f 13%, rgba(255, 150, 105, 1) 94%);
+}
+
+.card1:hover {
+  box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+  background: linear-gradient(90deg, rgba(255, 150, 105, 1) 13%, #ff512f 94%);
+  transition: all 0.3s ease-in-out;
+}
+
+/* CSS */
+.button-67 {
+  align-items: center;
+  background: linear-gradient(90deg, #ff512f 13%, rgba(255, 150, 105, 1) 94%);
+  border: 0;
+  border-radius: 8px;
+
+  box-sizing: border-box;
+  cursor: pointer;
+
+  font-size: 1rem;
+
+  line-height: 1.5rem;
+  padding: 15px;
+  position: relative;
+  text-align: left;
+  transition: 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+  width: max-content;
+  word-break: normal;
+  word-spacing: normal;
+}
+
+.button-67:hover {
+  background: linear-gradient(90deg, rgba(255, 150, 105, 1) 13%, #ff512f 94%);
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .button-67 {
+    padding: 24px;
+  }
+}
+
+/*// Glow Border Animation //*/
+
+.animated-border-box,
+.animated-border-box-glow {
+  max-height: 200px;
+  max-width: 250px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  /* Border Radius */
+  border-radius: 10px;
+}
+
+.animated-border-box-glow {
+  overflow: hidden;
+  /* Glow Blur */
+  filter: blur(20px);
+}
+
+.animated-border-box:before,
+.animated-border-box-glow:before {
+  content: "";
+  z-index: -2;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+  width: 99999px;
+  height: 99999px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  /*border color, change middle color*/
+  background-image: conic-gradient(
+    rgba(0, 0, 0, 0),
+    #ff512f,
+    rgba(0, 0, 0, 0) 25%
+  );
+  /* change speed here */
+  animation: rotate 4s linear infinite;
+}
+
+.animated-border-box:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  /* border width */
+  left: 5px;
+  top: 5px;
+  /* double the px from the border width left */
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  /*bg color*/
+  background: white;
+  /*box border radius*/
+  border-radius: 7px;
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+.center-box {
+  height: 30vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #1D1E22; */
+}
+input[type="date"] {
+  min-height: 2.5rem;
+}
